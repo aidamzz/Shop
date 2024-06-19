@@ -20,12 +20,9 @@ const userRoutes = require('./routes/users');
 const productRoutes = require('./routes/products');
 
 // Use routes
+app.use('/uploads', express.static('public/uploads'));
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
-// Basic route
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
 
 // Start the server
 app.listen(port, () => {
