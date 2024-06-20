@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
-const upload = require('../middleware/multerConfig');
+const auth = require('../middleware/auth');
+const upload = require('../middleware/multerConfig'); // Ensure the correct path to your multerConfig file
 
-router.post('/', upload.array('productImage', 5), productController.createProduct); // Adjust '5' to the maximum number of images allowed
+// Create a new product with image upload
+router.post('/', auth, upload.array('pictures', 5), productController.createProduct);
 
-// Route configurations using controller functions
+// Other routes...
 router.get('/', productController.getAllProducts);
 router.get('/:id', productController.getProductById);
-router.put('/:id', productController.updateProduct);
-router.delete('/:id', productController.deleteProduct);
+router.put('/:id', auth, productController.updateProduct);
+router.delete('/:id', auth, productController.deleteProduct);
 
 module.exports = router;

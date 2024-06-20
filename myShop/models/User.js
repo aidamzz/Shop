@@ -1,4 +1,3 @@
-// models/User.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -6,12 +5,15 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    trim: true
   },
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
+    trim: true,
+    lowercase: true
   },
   password: {
     type: String,
@@ -20,7 +22,9 @@ const UserSchema = new Schema({
   products: [{
     type: Schema.Types.ObjectId,
     ref: 'Product'
-}]
+  }]
+}, {
+  timestamps: true // Automatically adds createdAt and updatedAt fields
 });
 
 // Create User model

@@ -3,9 +3,13 @@ const Product = require('../models/Product');
 // Handle creating a new product
 exports.createProduct = async (req, res) => {
     const { title, description, price, sizes, colors, userId } = req.body;
-    let pictures = req.files.map(file => file.path); // This will create an array of file paths
 
     try {
+        // Check if userId is provided and valid
+        if (!userId) {
+            return res.status(400).json({ message: 'User ID is required' });
+        }
+
         const newProduct = new Product({
             user: userId,
             title,
@@ -13,15 +17,17 @@ exports.createProduct = async (req, res) => {
             price,
             sizes,
             colors,
-            pictures
+            pictures: req.files  ? req.files.map(file => file.path) : []
         });
+
         await newProduct.save();
         res.status(201).json(newProduct);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: 'Error creating product', error: err.message });
     }
 };
+
 
 // Handle fetching all products
 exports.getAllProducts = async (req, res) => {
@@ -30,7 +36,7 @@ exports.getAllProducts = async (req, res) => {
         res.json(products);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: 'Error fetching products', error: err.message });
     }
 };
 
@@ -44,7 +50,7 @@ exports.getProductById = async (req, res) => {
         res.json(product);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: 'Error fetching product', error: err.message });
     }
 };
 
@@ -59,14 +65,14 @@ exports.updateProduct = async (req, res) => {
             sizes,
             colors,
             pictures
-        }, { new: true }); // This option returns the updated document
+        }, { new: true });
         if (!product) {
             return res.status(404).json({ message: 'Product not found' });
         }
         res.json(product);
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: 'Error updating product', error: err.message });
     }
 };
 
@@ -80,6 +86,6 @@ exports.deleteProduct = async (req, res) => {
         res.json({ message: 'Product deleted successfully' });
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: err.message });
+        res.status(500).json({ message: 'Error deleting product', error: err.message });
     }
 };
