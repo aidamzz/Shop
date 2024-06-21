@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
 const auth = require('../middleware/auth');
-const upload = require('../middleware/multerConfig'); // Ensure the correct path to your multerConfig file
+const upload = require('../middleware/multerConfig')
 
 // Create a new product with image upload
 router.post('/', auth, upload.array('pictures', 5), productController.createProduct);
