@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "1653a44c-3dca-4d47-b97a-0d10fa2db5c8",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23284342",
+		"_collection_link": "https://blue-shadow-396513.postman.co/workspace/My-Workspace~e031fd4b-39ee-4954-880d-36f3a186a499/collection/23284342-1653a44c-3dca-4d47-b97a-0d10fa2db5c8?action=share&source=collection_link&creator=23284342"
+	},
+	"item": [
+		{
+			"name": "Shop",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "dress",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "nice dress",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "sizes",
+									"value": "'L', 'XL'",
+									"type": "text"
+								},
+								{
+									"key": "productImage",
+									"type": "file",
+									"src": [
+										"/D:/Downloads/images/81cbLXlGTtL._AC_SY879_.jpg",
+										"/D:/Downloads/images/81TGSBBIMsL._AC_SY879_.jpg",
+										"/D:/Downloads/images/81y2mnKb2eL._AC_SY879_.jpg",
+										"/D:/Downloads/images/91a1x2ZrB3L._AC_SX679_.jpg",
+										"/D:/Downloads/images/612tJv8bPUL._AC_SY879_.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProducts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "dress",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "nice dress",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "sizes",
+									"value": "'L', 'XL'",
+									"type": "text"
+								},
+								{
+									"key": "productImage",
+									"type": "file",
+									"src": [
+										"/D:/Downloads/images/81cbLXlGTtL._AC_SY879_.jpg",
+										"/D:/Downloads/images/81TGSBBIMsL._AC_SY879_.jpg",
+										"/D:/Downloads/images/81y2mnKb2eL._AC_SY879_.jpg",
+										"/D:/Downloads/images/91a1x2ZrB3L._AC_SX679_.jpg",
+										"/D:/Downloads/images/612tJv8bPUL._AC_SY879_.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "dress",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "nice dress",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "sizes",
+									"value": "'L', 'XL'",
+									"type": "text"
+								},
+								{
+									"key": "productImage",
+									"type": "file",
+									"src": [
+										"/D:/Downloads/images/81cbLXlGTtL._AC_SY879_.jpg",
+										"/D:/Downloads/images/81TGSBBIMsL._AC_SY879_.jpg",
+										"/D:/Downloads/images/81y2mnKb2eL._AC_SY879_.jpg",
+										"/D:/Downloads/images/91a1x2ZrB3L._AC_SX679_.jpg",
+										"/D:/Downloads/images/612tJv8bPUL._AC_SY879_.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/667404bf72d0b928254dd015",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"667404bf72d0b928254dd015"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzMxZDBlZjdhYTA0MjEyMzkyNTFhZSIsImlhdCI6MTcxODg4Nzg1OCwiZXhwIjoxNzE4ODkxNDU4fQ.WWRm3xiq9f3oCtHNS3wze_D60QU6Szj42c33ixIsCxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "white dress",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "nice dress",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "sizes",
+									"value": "'L', 'XL'",
+									"type": "text"
+								},
+								{
+									"key": "productImage",
+									"type": "file",
+									"src": [
+										"/D:/Downloads/images/81cbLXlGTtL._AC_SY879_.jpg",
+										"/D:/Downloads/images/81TGSBBIMsL._AC_SY879_.jpg",
+										"/D:/Downloads/images/81y2mnKb2eL._AC_SY879_.jpg",
+										"/D:/Downloads/images/91a1x2ZrB3L._AC_SX679_.jpg",
+										"/D:/Downloads/images/612tJv8bPUL._AC_SY879_.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/667404bf72d0b928254dd015",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"667404bf72d0b928254dd015"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzMxZDBlZjdhYTA0MjEyMzkyNTFhZSIsImlhdCI6MTcxODg4Nzg1OCwiZXhwIjoxNzE4ODkxNDU4fQ.WWRm3xiq9f3oCtHNS3wze_D60QU6Szj42c33ixIsCxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "white dress",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "nice dress",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "sizes",
+									"value": "'L', 'XL'",
+									"type": "text"
+								},
+								{
+									"key": "productImage",
+									"type": "file",
+									"src": [
+										"/D:/Downloads/images/81cbLXlGTtL._AC_SY879_.jpg",
+										"/D:/Downloads/images/81TGSBBIMsL._AC_SY879_.jpg",
+										"/D:/Downloads/images/81y2mnKb2eL._AC_SY879_.jpg",
+										"/D:/Downloads/images/91a1x2ZrB3L._AC_SX679_.jpg",
+										"/D:/Downloads/images/612tJv8bPUL._AC_SY879_.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/667404bf72d0b928254dd015",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"667404bf72d0b928254dd015"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"John Doa\",\n  \"email\": \"john2.doe@example.com\",\n  \"password\": \"securepassword123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john1.doe@example.com\",\n  \"password\": \"securepassword123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		}
+	]
+}
